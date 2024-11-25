@@ -1,10 +1,5 @@
 ﻿using Exam891.Core.Hotels.Models;
 using Exam891.Core.Hotels.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exam891.Core.Tests.Hotels.Repositories
 {
