@@ -9,9 +9,9 @@ namespace Exam891.Cli.Tests.CommandLine
         {
             // Arrange
             var args = Array.Empty<string>();
-            var result = ArgumentsParser.Parse(args);
 
             // Act
+            var result = ArgumentsParser.Parse(args);
 
             // Assert
             Assert.Empty(result.BookingsFilePath);
@@ -23,9 +23,9 @@ namespace Exam891.Cli.Tests.CommandLine
         {
             // Arrange
             var args = new[] { "--bookings", "bookings.csv" };
-            var result = ArgumentsParser.Parse(args);
 
             // Act
+            var result = ArgumentsParser.Parse(args);
 
             // Assert
             Assert.Empty(result.HotelsFilePath);
@@ -37,9 +37,9 @@ namespace Exam891.Cli.Tests.CommandLine
         {
             // Arrange
             var args = new[] { "--hotels", "hotels.csv" };
-            var result = ArgumentsParser.Parse(args);
 
             // Act
+            var result = ArgumentsParser.Parse(args);
 
             // Assert
             Assert.Empty(result.BookingsFilePath);
@@ -51,9 +51,9 @@ namespace Exam891.Cli.Tests.CommandLine
         {
             // Arrange
             var args = new[] { "--hotels", "hotels.csv", "--bookings", "bookings.csv" };
-            var result = ArgumentsParser.Parse(args);
 
             // Act
+            var result = ArgumentsParser.Parse(args);
 
             // Assert
             Assert.Equal("hotels.csv", result.HotelsFilePath);
@@ -65,8 +65,10 @@ namespace Exam891.Cli.Tests.CommandLine
         {
             // Arrange
             var args = new[] { "", " ", "--bookings", "bookings.csv", " ", "--hotels", "hotels.csv" };
-            var result = ArgumentsParser.Parse(args);
+
             // Act
+            var result = ArgumentsParser.Parse(args);
+
             // Assert
             Assert.Equal("hotels.csv", result.HotelsFilePath);
             Assert.Equal("bookings.csv", result.BookingsFilePath);
