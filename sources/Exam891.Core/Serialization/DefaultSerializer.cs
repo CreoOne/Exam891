@@ -6,15 +6,14 @@ namespace Exam891.Core.Serialization
     {
         private readonly JsonSerializerOptions _jsonSerializerOptions;
 
-        public DefaultSerializer(JsonSerializerOptions jsonSerializerOptions)
-            => _jsonSerializerOptions = jsonSerializerOptions;
-
         public DefaultSerializer()
-            : this(new JsonSerializerOptions()
+        {
+            _jsonSerializerOptions = new JsonSerializerOptions()
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            })
-        { }
+            };
+            _jsonSerializerOptions.Converters.Add(new DateOnlyConverter());
+        }
 
         public string Serialize<T>(T value)
             => JsonSerializer.Serialize(value, _jsonSerializerOptions);
