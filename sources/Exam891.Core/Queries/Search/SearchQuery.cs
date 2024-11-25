@@ -3,7 +3,7 @@ using Exam891.Core.Hotels.Repositories;
 
 namespace Exam891.Core.Queries.Search
 {
-    internal sealed class SearchQuery : ISearchQuery
+    public sealed class SearchQuery : ISearchQuery
     {
         private readonly IHotelsRepository _hotelsRepository;
         private readonly IBookingsRepository _bookingsRepository;
