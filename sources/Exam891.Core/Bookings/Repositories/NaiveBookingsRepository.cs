@@ -14,7 +14,6 @@ namespace Exam891.Core.Bookings.Repositories
 
         public IEnumerable<Booking> GetDateRange(string hotelId, string roomType, DateOnly from, DateOnly to)
             => _bookings
-                .Where(booking => booking.HotelId == hotelId && booking.RoomType == roomType && booking.Departure >= from && booking.Arrival <= to)
-                .OrderBy(booking => booking.Arrival);
+                .Where(booking => booking.HotelId == hotelId && booking.RoomType == roomType && booking.Departure >= from && booking.Arrival <= to);
     }
 }
