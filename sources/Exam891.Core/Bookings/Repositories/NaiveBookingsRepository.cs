@@ -2,7 +2,7 @@
 
 namespace Exam891.Core.Bookings.Repositories
 {
-    internal sealed class NaiveBookingsRepository : IBookingsRepository
+    public sealed class NaiveBookingsRepository : IBookingsRepository
     {
         private readonly List<Booking> _bookings = [];
 

@@ -2,7 +2,7 @@
 
 namespace Exam891.Core.Bookings.Repositories
 {
-    internal interface IBookingsRepository
+    public interface IBookingsRepository
     {
         void Add(Booking booking);
         void Add(IEnumerable<Booking> bookings);

@@ -2,7 +2,7 @@
 
 namespace Exam891.Core.Hotels.Repositories
 {
-    internal interface IHotelsRepository
+    public interface IHotelsRepository
     {
         void Add(Hotel hotel);
         void Add(IEnumerable<Hotel> hotels);

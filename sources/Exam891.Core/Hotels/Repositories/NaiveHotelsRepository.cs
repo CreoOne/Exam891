@@ -2,7 +2,7 @@
 
 namespace Exam891.Core.Hotels.Repositories
 {
-    internal sealed class NaiveHotelsRepository : IHotelsRepository
+    public sealed class NaiveHotelsRepository : IHotelsRepository
     {
         private readonly List<Hotel> _hotels = [];
 
