@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Exam891.Cli": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

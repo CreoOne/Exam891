@@ -1,0 +1,12 @@
+# User specific files
+*.user
+*.suo
+
+# Editor settings
+.vs/
+.vscode/
+.idea/
+
+# Local build artifacts
+[Bb]in/
+[Oo]bj/
