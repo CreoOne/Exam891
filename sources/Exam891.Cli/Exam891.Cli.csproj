@@ -12,4 +12,12 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Exam891.Core\Exam891.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Exam891.Cli.Tests" />
+  </ItemGroup>
+
 </Project>

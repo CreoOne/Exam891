@@ -23,6 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Exam891.Cli\Exam891.Cli.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 
