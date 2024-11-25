@@ -3,7 +3,7 @@ using Exam891.Core.Hotels.Repositories;
 
 namespace Exam891.Core.Queries.Search
 {
-    internal sealed class SearchQuery
+    internal sealed class SearchQuery : ISearchQuery
     {
         private readonly IHotelsRepository _hotelsRepository;
         private readonly IBookingsRepository _bookingsRepository;
@@ -20,7 +20,10 @@ namespace Exam891.Core.Queries.Search
             var bookings = _bookingsRepository.GetDateRange(hotelId, roomType, startDate, endDate);
 
             if (!bookings.Any())
+            {
+                yield return new SearchResult(startDate, endDate, roomCount);
                 yield break;
+            }
 
             var allDates = bookings
                 .SelectMany(booking => new DateOnly[] { booking.Arrival, booking.Departure })

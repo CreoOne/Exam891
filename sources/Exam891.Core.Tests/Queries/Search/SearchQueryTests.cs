@@ -36,7 +36,7 @@ namespace Exam891.Core.Tests.Queries.Search
             var results = searchQuery.Search(hotelId, DateOnly.MinValue, DateOnly.MaxValue, roomType);
 
             // Assert
-            Assert.Empty(results);
+            Assert.Single(results);
         }
 
         [Fact]
