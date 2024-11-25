@@ -2,7 +2,7 @@
 
 namespace Exam891.Core.Queries.Availability
 {
-    internal sealed class AvailabilityQuery
+    internal sealed class AvailabilityQuery : IAvailabilityQuery
     {
         private readonly ISearchQuery _searchQuery;
 
