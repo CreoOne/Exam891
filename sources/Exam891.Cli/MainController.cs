@@ -85,12 +85,17 @@ namespace Exam891.Cli
 
             for (var index = 0; index < results.Length; index++)
             {
+                var result = results[index];
+
+                if (result.AvailableRoomsCount <= 0)
+                    continue;
+
                 builder.Append('(');
-                builder.Append(results[index].From.ToString(DateOnlyFormat));
+                builder.Append(result.From.ToString(DateOnlyFormat));
                 builder.Append('-');
-                builder.Append(results[index].To.ToString(DateOnlyFormat));
+                builder.Append(result.To.ToString(DateOnlyFormat));
                 builder.Append(", ");
-                builder.Append(results[index].AvailableRoomsCount);
+                builder.Append(result.AvailableRoomsCount);
                 builder.Append(')');
 
                 if (index < results.Length - 1)

@@ -23,6 +23,22 @@ namespace Exam891.Cli.Tests
         }
 
         [Fact]
+        public void Execute_With0AvailableSearchCommand_ReturnsEmptyString()
+        {
+            // Arrange
+            var searchQuery = Substitute.For<ISearchQuery>();
+            var availabilityQuery = Substitute.For<IAvailabilityQuery>();
+            var controller = new MainController(searchQuery, availabilityQuery);
+            var command = new Command("Search", ["H9", "20", "XDG"]);
+
+            // Act
+            var result = controller.Execute(command);
+
+            // Assert
+            Assert.Empty(result);
+        }
+
+        [Fact]
         public void Execute_WithAvailabilityCommandSpecificDate_ReturnsAvailabilityResults()
         {
             // Arrange
