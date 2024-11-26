@@ -90,13 +90,7 @@ namespace Exam891.Cli
                 if (result.AvailableRoomsCount <= 0)
                     continue;
 
-                builder.Append('(');
-                builder.Append(result.From.ToString(DateOnlyFormat));
-                builder.Append('-');
-                builder.Append(result.To.ToString(DateOnlyFormat));
-                builder.Append(", ");
-                builder.Append(result.AvailableRoomsCount);
-                builder.Append(')');
+                SerializeSearchResult(builder, result);
 
                 if (index < results.Length - 1)
                     builder.Append(",\n");
@@ -104,5 +98,15 @@ namespace Exam891.Cli
 
             return builder.ToString();
         }
+
+        private static void SerializeSearchResult(StringBuilder stringBuilder, SearchResult result)
+            => stringBuilder
+                .Append('(')
+                .Append(result.From.ToString(DateOnlyFormat))
+                .Append('-')
+                .Append(result.To.ToString(DateOnlyFormat))
+                .Append(", ")
+                .Append(result.AvailableRoomsCount)
+                .Append(')');
     }
 }
