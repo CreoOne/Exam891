@@ -103,7 +103,7 @@ Availability(H1, 20241201, SGL)
 Availability(H1, 20241201-20241203, DBL)
 ```
 
-Returns number of available rooms for this range.
+Returns number of available rooms for this range. Note: this is number of the best availability in provided range, it does not imply that all the rooms are available all the time. See `Search` command for more detailed information.
 
 Example:
 
