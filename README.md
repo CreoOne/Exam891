@@ -98,7 +98,7 @@ Availability query allows to retrieve information about number of available room
 
 Examples:
 
-```
+```javascript
 Availability(H1, 20241201, SGL)
 Availability(H1, 20241201-20241203, DBL)
 ```
