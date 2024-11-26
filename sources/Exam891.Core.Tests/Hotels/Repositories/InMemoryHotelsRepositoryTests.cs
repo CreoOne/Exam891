@@ -3,13 +3,13 @@ using Exam891.Core.Hotels.Repositories;
 
 namespace Exam891.Core.Tests.Hotels.Repositories
 {
-    public sealed class NaiveHotelsRepositoryTests
+    public sealed class InMemoryHotelsRepositoryTests
     {
         [Fact]
         public void GetRoomCount_WhenNoRooms_ReturnsZero()
         {
             // Arrange
-            var repository = new NaiveHotelsRepository();
+            var repository = new InMemoryHotelsRepository();
 
             // Act
             var result = repository.GetRoomCount("hotelId", "roomType");
@@ -22,7 +22,7 @@ namespace Exam891.Core.Tests.Hotels.Repositories
         public void GetRoomCount_WhenRooms_ReturnsCount()
         {
             // Arrange
-            var repository = new NaiveHotelsRepository();
+            var repository = new InMemoryHotelsRepository();
             repository.Add(new Hotel
             {
                 Id = "hotelId",

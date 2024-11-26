@@ -11,7 +11,7 @@ namespace Exam891.Core.Hotels.Factories
             var deserliazer = new DefaultSerializer();
             var fileContent = File.ReadAllText(hotelsFilePath);
             var hotels = deserliazer.Deserialize<Hotel[]>(fileContent);
-            var hotelsRepository = new NaiveHotelsRepository();
+            var hotelsRepository = new InMemoryHotelsRepository();
             hotelsRepository.Add(hotels ?? []);
             return hotelsRepository;
         }

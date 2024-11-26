@@ -15,7 +15,7 @@ namespace Exam891.Core.Tests.Queries.Availability
             // Arrange
             const string hotelId = "hotelId";
             const string roomType = "roomType";
-            var hotelsRepository = new NaiveHotelsRepository();
+            var hotelsRepository = new InMemoryHotelsRepository();
             hotelsRepository.Add(new Hotel
             {
                 Id = hotelId,
@@ -46,7 +46,7 @@ namespace Exam891.Core.Tests.Queries.Availability
             // Arrange
             const string hotelId = "hotelId";
             const string roomType = "roomType";
-            var hotelsRepository = new NaiveHotelsRepository();
+            var hotelsRepository = new InMemoryHotelsRepository();
             hotelsRepository.Add(new Hotel
             {
                 Id = hotelId,
