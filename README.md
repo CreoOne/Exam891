@@ -111,6 +111,10 @@ Example:
 2
 ```
 
+#### Exit
+
+To exit the interactive mode of application, just type in the empty line.
+
 ## Technical overview
 
 This project was created with simplicity and extensibility in mind. Although it is not implemented yet, it is possible to embed almost all of its functionality inside Web App or more pipeline friendly version of CLI.
