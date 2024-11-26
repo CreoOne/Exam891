@@ -29,7 +29,7 @@ namespace Exam891.Core.Tests.Queries.Availability
                     }
                 ]
             });
-            var bookingsRepository = new NaiveBookingsRepository();
+            var bookingsRepository = new InMemoryBookingsRepository();
             var searchQuery = new SearchQuery(hotelsRepository, bookingsRepository);
             var availabilityQuery = new AvailabilityQuery(searchQuery);
 
@@ -60,7 +60,7 @@ namespace Exam891.Core.Tests.Queries.Availability
                     }
                 ]
             });
-            var bookingsRepository = new NaiveBookingsRepository();
+            var bookingsRepository = new InMemoryBookingsRepository();
             bookingsRepository.Add(new Booking
             {
                 HotelId = hotelId,

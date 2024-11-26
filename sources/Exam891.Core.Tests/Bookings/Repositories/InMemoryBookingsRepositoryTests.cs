@@ -3,13 +3,13 @@ using Exam891.Core.Bookings.Repositories;
 
 namespace Exam891.Core.Tests.Bookings.Repositories
 {
-    public sealed class NaiveBookingsRepositoryTests
+    public sealed class InMemoryBookingsRepositoryTests
     {
         [Fact]
         public void GetDateRange_WhenNoBookings_ReturnsEmpty()
         {
             // Arrange
-            var repository = new NaiveBookingsRepository();
+            var repository = new InMemoryBookingsRepository();
 
             // Act
             var bookings = repository.GetDateRange("hotelId", "roomType", DateOnly.MinValue, DateOnly.MaxValue);
@@ -23,7 +23,7 @@ namespace Exam891.Core.Tests.Bookings.Repositories
         public void GetDateRange_WhenBookings_ReturnsSingleBooking(DateOnly from, DateOnly to)
         {
             // Arrange
-            var repository = new NaiveBookingsRepository();
+            var repository = new InMemoryBookingsRepository();
             repository.Add(new Booking
             {
                 HotelId = "hotelId",

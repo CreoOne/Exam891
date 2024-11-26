@@ -11,7 +11,7 @@ namespace Exam891.Core.Bookings.Factories
             var deserliazer = new DefaultSerializer();
             var fileContent = File.ReadAllText(bookingsFilePath);
             var bookings = deserliazer.Deserialize<Booking[]>(fileContent);
-            var bookingsRepository = new NaiveBookingsRepository();
+            var bookingsRepository = new InMemoryBookingsRepository();
             bookingsRepository.Add(bookings ?? []);
             return bookingsRepository;
         }
