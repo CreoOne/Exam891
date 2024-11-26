@@ -1,4 +1,5 @@
 ﻿using Exam891.Cli.CommandLine;
+using Exam891.Cli.Commands;
 using Exam891.Core.Bookings.Factories;
 using Exam891.Core.Hotels.Factories;
 using Exam891.Core.Queries.Availability;
@@ -41,7 +42,10 @@ namespace Exam891.Cli
             var bookingsRepository = FileImportBookingsRepositoryFactory.Create(parameters.BookingsFilePath);
             var searchQuery = new SearchQuery(hotelsRepository, bookingsRepository);
             var availabilityQuery = new AvailabilityQuery(searchQuery);
-            return new MainController(searchQuery, availabilityQuery);
+            var mainController = new MainController();
+            mainController.Add(new SearchCommand(searchQuery));
+            mainController.Add(new AvailabilityCommand(availabilityQuery));
+            return mainController;
         }
     }
 }
