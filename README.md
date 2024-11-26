@@ -61,6 +61,8 @@ Example:
 
 Commands can be typed in after application is correctly started.
 
+**Commands and parameters are case sensitive**
+
 #### Search
 
 Search query allows to retrieve information about available rooms from now until specified range in days.
